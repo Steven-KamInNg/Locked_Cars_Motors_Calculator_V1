@@ -45,10 +45,8 @@ function calculateFee() {
     let TotalFee = 0;
     TotalFee = ParkingFee + TowingFee + StoringFee
 
-    document.getElementById('result').innerText = `泊車費: ${ParkingFee.toFixed(2)} MOP`;
-    document.getElementById('result').innerText = `移走費: ${TowingFee.toFixed(2)} MOP`;
-    document.getElementById('result').innerText = `存倉費: ${StoringFee.toFixed(2)} MOP`;
-    document.getElementById('result').innerText = `總費用: ${TotalFee.toFixed(2)} MOP`;
+    document.getElementById('result').innerText = `泊車費: ${ParkingFee.toFixed(2)} MOP\n移走費: ${TowingFee.toFixed(2)} MOP\n存倉費: ${StoringFee.toFixed(2)} MOP\n總費用: ${TotalFee.toFixed(2)} MOP`;
+    
     
 }
 
