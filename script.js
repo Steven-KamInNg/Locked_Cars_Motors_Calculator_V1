@@ -1,5 +1,7 @@
 function calculateFee() {
     const entryTime = document.getElementById('entry_time').value;
+    const lockedTime = document.getElementById('locked_time').value;
+    const paidTime = document.getElementById('paid_time').value;
     const exitTime = document.getElementById('exit_time').value;
     const vehicleType = document.getElementById('vehicle_type').value;
 
