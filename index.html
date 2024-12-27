@@ -34,28 +34,57 @@
 </head>
 <body>
     <form id="parkingForm">
-        <label for="plate_number">車牌號碼:</label>
+        <label for="processing_type">車輛處理類型:</label>
+        <select id="processing_type">
+            <option value="未鎖車">未鎖車8️⃣</option>
+            <option value="已鎖車">已鎖車🔒</option>
+            <option value="已繳費開鎖">已繳費開鎖🔐</option>
+            <option value="已繳費待濫泊場取車">已繳費待濫泊場取車🧾🪪🏍️🛵🚘🚖</option>
+        </select><br><br>
+            
+        <label for="pakring_lot_name">停車場名🏢🅿️:</label>
+        <select id="processing_type">
+            <option value="松樹尾停車場">松樹尾</option>
+            <option value="快達樓停車場">快達</option>
+            <option value="青葱大廈停車場">青葱</option>
+            <option value="青翠大廈停車場">青翠</option>
+            <option value="青泉大廈停車場">青泉</option>
+        </select><br><br>
+            
+        <label for="plate_number">車牌號碼(AB1234):</label>
         <input type="text" id="plate_number" placeholder="輸入車牌號碼"><br><br>
             
-        <label for="vehicle_type">車型:</label>
+        <label for="vehicle_type">車型🚗?🛵?:</label>
         <select id="vehicle_type">
-            <option value="私家車">私家車</option>
-            <option value="電單車">電單車</option>
+            <option value="私家車">私家車🚗</option>
+            <option value="電單車">電單車🛵</option>
         </select><br><br>
+            
+        <label for="place_number">車位編號:</label>
+        <input type="text" id="place_number" placeholder="輸入車位編號"><br><br>
         
-        <label for="entry_time">入場時間:</label>
+        <label for="entry_time">入場時間🏢⬅️:</label>
         <input type="datetime-local" id="entry_time"><br><br>
             
-        <label for="locked_time">鎖車時間:</label>
+        <label for="noted_time">貼科陽違泊告示時間🔖:</label>
+        <input type="datetime-local" id="noted_time"><br><br>
+            
+        <label for="calling_lock_time">通知交通廳執法鎖車時間☎️:</label>
+        <input type="datetime-local" id="calling_lock_time"><br><br>
+            
+        <label for="police_ID">警員編號👮:</label>
+        <input type="text" id="police_ID" placeholder="輸入警員編號"><br><br>
+            
+        <label for="locked_time">鎖車時間🔒:</label>
         <input type="datetime-local" id="locked_time"><br><br>
         
-        <label for="paid_time">繳費時間:</label>
+        <label for="paid_time">繳費時間💲:</label>
         <input type="datetime-local" id="paid_time"><br><br>
         
-        <label for="unlocked_time">開鎖時間:</label>
+        <label for="unlocked_time">開鎖時間🔐:</label>
         <input type="datetime-local" id="unlocked_time"><br><br>
             
-        <label for="exit_time">出場時間:</label>
+        <label for="exit_time">出場時間🏢➡️:</label>
         <input type="datetime-local" id="exit_time"><br><br>
         
         
