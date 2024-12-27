@@ -21,11 +21,11 @@ function calculateFee() {
     let totalNightHours = 0;
 
     let currentTime = entry;
-    while (currentTime < exit) {
+    while (currentTime < locked) {
         let nextHour = new Date(currentTime);
         nextHour.setHours(nextHour.getHours() + 1);
-        if (nextHour > exit) {
-            nextHour = exit;
+        if (nextHour > locked) {
+            nextHour = locked;
         }
         if (currentTime.getHours() >= 8 && currentTime.getHours() < 20) {
             totalDayHours += (nextHour - currentTime) / 3600000;
@@ -40,13 +40,19 @@ function calculateFee() {
     const ParkingFee = (totalDayHours * dayRate) + (totalNightHours * nightRate);
 
     let TowingFee;
+    let StoringFeeRate;
     if (vehicleType === '私家車') {
         TowingFee = 1500;
+        StoringFeeRate = 100;
     } else if (vehicleType === '電單車') {
         TowingFee = 750;
+        StoringFeeRate = 50;
     }
+    
+    let StoringDays = 0;
 
-    const StoringFee = 100; // Add your logic to calculate Storing Fee
+
+    const StoringFee = 0; // Add your logic to calculate Storing Fee
     const TotalFee = ParkingFee + TowingFee + StoringFee;
 
     document.getElementById('result').innerText = `泊車費: ${ParkingFee.toFixed(2)} MOP\n移走費: ${TowingFee.toFixed(2)} MOP\n存倉費: ${StoringFee.toFixed(2)} MOP\n總費用: ${TotalFee.toFixed(2)} MOP`;
