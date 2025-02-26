@@ -3,22 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>停車場收費計算器</title>
+    <title>停車場鎖車收費計算器</title>
+    <style>
+        .date-input {
+            width: 50px;
+        }
+    </style>
 </head>
 <body>
     <form id="parkingForm">
-        <label for="processing_type">車輛處理類型:</label>
-        <select id="processing_type">
-            <option value="未鎖車">未鎖車8️⃣</option>
-            <option value="已鎖車">已鎖車🔒</option>
-            <option value="已繳費開鎖">已繳費開鎖🔐</option>
-            <option value="已繳費待濫泊場取車">已繳費待濫泊場取車🧾🪪🏍️🛵🚘🚖</option>
+        <label for="violation_type">違規類型:</label>
+        <select id="violation_type">
+            <option value="超8日車">超8日車8️⃣</option>
+            <option value="違規佔用">違規佔用🚫</option>
         </select><br><br>
             
-        <label for="pakring_lot_name">停車場名🏢🅿️:</label>
-        <select id="processing_type">
+        <label for="parking_lot_name">停車場名🏢🅿️:</label>
+        <select id="parking_lot_name">
+            <option value="關閘停車場">關閘</option>
+            <option value="港珠澳大橋東停車場">東場</option>
+            <option value="港珠澳大橋西停車場">西場</option>
             <option value="松樹尾停車場">松樹尾</option>
+            <option value="日暉停車場">日暉</option>
+            <option value="永寧停車場">永寧</option>
+            <option value="望善停車場">望善</option>
+            <option value="望賢停車場">望賢</option>
+            <option value="河邊新街停車場">河邊新街</option>
+            <option value="華士古停車場">華士古</option>
+            <option value="何賢停車場">何賢</option>
+            <option value="柏樂停車場">柏樂</option>
+            <option value="馬六甲停車場">馬六甲</option>
+            <option value="快盈停車場">快盈</option>
             <option value="快達樓停車場">快達</option>
+            <option value="青怡大廈停車場">青怡</option>
             <option value="青葱大廈停車場">青葱</option>
             <option value="青翠大廈停車場">青翠</option>
             <option value="青泉大廈停車場">青泉</option>
@@ -33,34 +50,29 @@
             <option value="電單車">電單車🛵</option>
         </select><br><br>
             
-        <label for="place_number">車位編號:</label>
-        <input type="text" id="place_number" placeholder="輸入車位編號"><br><br>
-        
-        <label for="entry_time">入場時間🏢⬅️:</label>
-        <input type="datetime-local" id="entry_time"><br><br>
+        <label for="entry_time">入場時間🏢⬅️(例如2025年12月31日23時59分):</label><br>
+        <input type="number" id="entry_time_year" class="date-input" placeholder="年" min="1900" max="2100">
+        <input type="number" id="entry_time_month" class="date-input" placeholder="月" min="1" max="12">
+        <input type="number" id="entry_time_day" class="date-input" placeholder="日" min="1" max="31">
+        <input type="number" id="entry_time_hour" class="date-input" placeholder="時" min="0" max="23">
+        <input type="number" id="entry_time_minute" class="date-input" placeholder="分" min="0" max="59"><br><br>
             
-        <label for="noted_time">貼科陽違泊告示時間🚫📝:</label>
-        <input type="datetime-local" id="noted_time"><br><br>
-            
-        <label for="calling_lock_time">通知交通廳執法鎖車時間☎️:</label>
-        <input type="datetime-local" id="calling_lock_time"><br><br>
-            
-        <label for="police_ID">警員編號👮:</label>
-        <input type="text" id="police_ID" placeholder="輸入警員編號"><br><br>
-            
-        <label for="locked_time">鎖車時間🔒:</label>
-        <input type="datetime-local" id="locked_time"><br><br>
+        <label for="locked_time">鎖車時間🔒(例如2025年12月31日23時59分):</label><br>
+        <input type="number" id="locked_time_year" class="date-input" placeholder="年" min="1900" max="2100">
+        <input type="number" id="locked_time_month" class="date-input" placeholder="月" min="1" max="12">
+        <input type="number" id="locked_time_day" class="date-input" placeholder="日" min="1" max="31">
+        <input type="number" id="locked_time_hour" class="date-input" placeholder="時" min="0" max="23">
+        <input type="number" id="locked_time_minute" class="date-input" placeholder="分" min="0" max="59"><br><br>
         
-        <label for="paid_time">繳費時間💲:</label>
-        <input type="datetime-local" id="paid_time"><br><br>
-        
-        <label for="unlocked_time">開鎖時間🔐:</label>
-        <input type="datetime-local" id="unlocked_time"><br><br>
-            
-        <label for="exit_time">出場時間🏢➡️:</label>
-        <input type="datetime-local" id="exit_time"><br><br>
-        
-        
+        <label for="paid_time">繳費時間💲(例如2025年12月31日23時59分):</label><br>
+        <input type="number" id="paid_time_year" class="date-input" placeholder="年" min="1900" max="2100">
+        <input type="number" id="paid_time_month" class="date-input" placeholder="月" min="1" max="12">
+        <input type="number" id="paid_time_day" class="date-input" placeholder="日" min="1" max="31">
+        <input type="number" id="paid_time_hour" class="date-input" placeholder="時" min="0" max="23">
+        <input type="number" id="paid_time_minute" class="date-input" placeholder="分" min="0" max="59"><br><br>
+
+        <label for="phone_number">車主電話📞:</label>
+        <input type="number" id="phone_number" placeholder="輸入電話號碼"><br><br>
         
         <button type="button" onclick="calculateFee()">計算🆗</button>
     </form>
