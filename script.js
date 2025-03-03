@@ -45,7 +45,7 @@ function calculateFee() {
     const currentDate = new Date()
     const formattedDate = currentDate.toLocaleString();
 
-    document.getElementById('result').innerText = `<<收據>>\n 日期: ${formatDate(currentDate)}\n${parkinglotName}\n ${vehicleType} ${plateNumber} ${violationType}\n 入場時間: ${formatDate(entry)}\n 鎖車時間: ${formatDate(locked)}\n 繳費時間: ${formatDate(paid)}\n 泊車費: ${parkingFee.toFixed(2)} MOP； 移走費: ${towingFee.toFixed(2)} MOP； 存倉費: ${storingFee.toFixed(2)} MOP\n 總費用: ${totalFee.toFixed(2)} MOP\n 車主電話: ${document.getElementById('phone_number').value}`;
+    document.getElementById('result').innerText = `<<收據>>\n 日期: ${formatDate(currentDate)}\n${parkinglotName}\n ${vehicleType} ${plateNumber} ${violationType}\n 入場時間: ${formatDate(entry)}\n 鎖車時間: ${formatDate(locked)}\n 存倉截止時間: ${formatDate(paid)}\n 泊車費: ${parkingFee.toFixed(2)} MOP； 移走費: ${towingFee.toFixed(2)} MOP； 存倉費: ${storingFee.toFixed(2)} MOP\n 總費用: ${totalFee.toFixed(2)} MOP\n 車主電話: ${document.getElementById('phone_number').value}`;
 
 }
 
